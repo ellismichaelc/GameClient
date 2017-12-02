@@ -3,7 +3,7 @@ var world = require('../src/world');
 var renderer = require('../src/renderer');
 var camera = require('../src/camera');
 var terrain = require('../src/terrain');
-var mcec = require('../shared/mcec');
+var mcec = require('../src/mcec');
 var io = require('../src/sockets');
 var views = require('../src/views');
 import models from '../src/models';

@@ -21,6 +21,8 @@
     "watchify": "^3.6.1"
   },
   "dependencies": {
+    "gulp-util": "^3.0.8",
+    "gutil-color-log": "^1.0.2",
     "socket.io": "^2.0.3",
     "three": "0.87.1",
     "three-collada-loader": "0.0.1",

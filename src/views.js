@@ -1,5 +1,5 @@
 // import ColladaLoader from "../src/ColladaLoader.js";
-var mcec = require('../shared/mcec');
+var mcec = require('../src/mcec');
 var io = require('../src/sockets');
 
 export default class views {

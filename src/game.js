@@ -1,6 +1,6 @@
 //global.THREE = require('../js/build/three.min');
 
-var mcec = require('../shared/mcec');
+var mcec = require('../src/mcec');
 var io = require('../src/sockets');
 var scene = require('../src/scene');
 var login = require('../src/login');

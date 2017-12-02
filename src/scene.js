@@ -1,4 +1,4 @@
-var mcec = require('../shared/mcec');
+var mcec = require('../src/mcec');
 var players = require('../src/players');
 var world = require('../src/world');
 var renderer = require('../src/renderer');

@@ -1,4 +1,4 @@
-var mcec = require('../shared/mcec');
+var mcec = require('../src/mcec');
 
 class camera {
     constructor(scene) {

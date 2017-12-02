@@ -6,6 +6,7 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
+var gutil = require('gulp-util');
 
 function compile(watch) {
 
@@ -14,18 +15,20 @@ function compile(watch) {
 
   function rebundle() {
     bundler.bundle()
-      .on('error', function(err) { console.error(err); this.emit('end'); })
+      .on('error', function(err) { gutil.log(err); this.emit('end'); })
       .pipe(source('compiled.js'))
       .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./dist'));
+
   }
 
   if (watch) {
     bundler.on('update', function() {
       console.log('-> bundling...');
       rebundle();
+      console.log(".. Done!");
     });
   }
 
