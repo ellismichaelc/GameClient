@@ -4553,7 +4553,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./transport":17,"./transports/index":18,"component-emitter":11,"debug":13,"engine.io-parser":24,"indexof":29,"parseqs":32,"parseuri":33}],17:[function(require,module,exports){
+},{"./transport":17,"./transports/index":18,"component-emitter":11,"debug":13,"engine.io-parser":24,"indexof":30,"parseqs":32,"parseuri":33}],17:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -5671,7 +5671,7 @@ Polling.prototype.uri = function () {
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":17,"component-inherit":12,"debug":13,"engine.io-parser":24,"parseqs":32,"xmlhttprequest-ssl":23,"yeast":44}],22:[function(require,module,exports){
+},{"../transport":17,"component-inherit":12,"debug":13,"engine.io-parser":24,"parseqs":32,"xmlhttprequest-ssl":23,"yeast":45}],22:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -5962,7 +5962,7 @@ WS.prototype.check = function () {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../transport":17,"component-inherit":12,"debug":13,"engine.io-parser":24,"parseqs":32,"ws":9,"yeast":44}],23:[function(require,module,exports){
+},{"../transport":17,"component-inherit":12,"debug":13,"engine.io-parser":24,"parseqs":32,"ws":9,"yeast":45}],23:[function(require,module,exports){
 (function (global){
 // browser shim for xmlhttprequest module
 
@@ -6004,7 +6004,7 @@ module.exports = function (opts) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"has-cors":28}],24:[function(require,module,exports){
+},{"has-cors":29}],24:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -6963,7 +6963,14 @@ function hasBinary (obj) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"isarray":30}],28:[function(require,module,exports){
+},{"isarray":28}],28:[function(require,module,exports){
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+},{}],29:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -6982,7 +6989,7 @@ try {
   module.exports = false;
 }
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -6993,13 +7000,6 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],30:[function(require,module,exports){
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-
 },{}],31:[function(require,module,exports){
 /**
  * Helpers.
@@ -8091,7 +8091,7 @@ Manager.prototype.onreconnect = function () {
   this.emitAll('reconnect', attempt);
 };
 
-},{"./on":37,"./socket":38,"backo2":6,"component-bind":10,"component-emitter":11,"debug":13,"engine.io-client":15,"indexof":29,"socket.io-parser":41}],37:[function(require,module,exports){
+},{"./on":37,"./socket":38,"backo2":6,"component-bind":10,"component-emitter":11,"debug":13,"engine.io-client":15,"indexof":30,"socket.io-parser":41}],37:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -8537,7 +8537,7 @@ Socket.prototype.compress = function (compress) {
   return this;
 };
 
-},{"./on":37,"component-bind":10,"component-emitter":11,"debug":13,"parseqs":32,"socket.io-parser":41,"to-array":43}],39:[function(require,module,exports){
+},{"./on":37,"component-bind":10,"component-emitter":11,"debug":13,"parseqs":32,"socket.io-parser":41,"to-array":44}],39:[function(require,module,exports){
 (function (global){
 
 /**
@@ -8763,7 +8763,7 @@ exports.removeBlobs = function(data, callback) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./is-buffer":42,"isarray":30}],41:[function(require,module,exports){
+},{"./is-buffer":42,"isarray":43}],41:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -9184,6 +9184,8 @@ function isBuf(obj) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{}],43:[function(require,module,exports){
+arguments[4][28][0].apply(exports,arguments)
+},{"dup":28}],44:[function(require,module,exports){
 module.exports = toArray
 
 function toArray(list, index) {
@@ -9198,7 +9200,7 @@ function toArray(list, index) {
     return array
 }
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 'use strict';
 
 var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')
@@ -9268,7 +9270,7 @@ yeast.encode = encode;
 yeast.decode = decode;
 module.exports = yeast;
 
-},{}],45:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 'use strict';
 
 var _game = require('../src/game.js');
@@ -9365,7 +9367,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //     return true;
 // }
 
-},{"../src/game.js":48}],46:[function(require,module,exports){
+},{"../src/game.js":49}],47:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10111,7 +10113,7 @@ var baseModel = function () {
 
 exports.default = baseModel;
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10529,7 +10531,7 @@ var camera = function () {
 
 module.exports = camera;
 
-},{"../src/mcec":50}],48:[function(require,module,exports){
+},{"../src/mcec":51}],49:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -10642,7 +10644,7 @@ module.exports = game;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../js/jquery-1.12.4.min":1,"../src/login":49,"../src/mcec":50,"../src/scene":55,"../src/sockets":57}],49:[function(require,module,exports){
+},{"../js/jquery-1.12.4.min":1,"../src/login":50,"../src/mcec":51,"../src/scene":56,"../src/sockets":58}],50:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10792,7 +10794,7 @@ var login = function () {
 
 module.exports = login;
 
-},{"../js/objects/water":2,"../src/camera":47,"../src/mcec":50,"../src/models":51,"../src/players":53,"../src/renderer":54,"../src/sockets":57,"../src/terrain":58,"../src/views":60,"../src/world":62}],50:[function(require,module,exports){
+},{"../js/objects/water":2,"../src/camera":48,"../src/mcec":51,"../src/models":52,"../src/players":54,"../src/renderer":55,"../src/sockets":58,"../src/terrain":59,"../src/views":61,"../src/world":63}],51:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11110,7 +11112,7 @@ module.exports = new mcec();
 
 }).call(this,require('_process'))
 
-},{"_process":34}],51:[function(require,module,exports){
+},{"_process":34}],52:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11621,7 +11623,7 @@ exports.default = models;
 
 module.exports = models;
 
-},{"../src/mcec":50}],52:[function(require,module,exports){
+},{"../src/mcec":51}],53:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12329,7 +12331,7 @@ var player = function (_baseModel) {
 
 module.exports = player;
 
-},{"../src/basemodel":46,"../src/sockets":57}],53:[function(require,module,exports){
+},{"../src/basemodel":47,"../src/sockets":58}],54:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12433,7 +12435,7 @@ var players = function () {
 
 module.exports = players;
 
-},{"../src/player.js":52}],54:[function(require,module,exports){
+},{"../src/player.js":53}],55:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12508,7 +12510,7 @@ var renderer = function () {
 
 module.exports = renderer;
 
-},{"../js/renderers/CSS3DRenderer.js":3}],55:[function(require,module,exports){
+},{"../js/renderers/CSS3DRenderer.js":3}],56:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -13068,7 +13070,7 @@ var scene = function () {
 
 module.exports = scene;
 
-},{"../js/objects/water":2,"../src/camera":47,"../src/mcec":50,"../src/models":51,"../src/players":53,"../src/renderer":54,"../src/sockets":57,"../src/terrain":58,"../src/world":62}],56:[function(require,module,exports){
+},{"../js/objects/water":2,"../src/camera":48,"../src/mcec":51,"../src/models":52,"../src/players":54,"../src/renderer":55,"../src/sockets":58,"../src/terrain":59,"../src/world":63}],57:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -13289,7 +13291,7 @@ var shaders = function () {
 
 module.exports = shaders;
 
-},{}],57:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -13382,7 +13384,7 @@ var sockets = function () {
 
 module.exports = new sockets();
 
-},{"../src/mcec":50,"socket.io-client":35}],58:[function(require,module,exports){
+},{"../src/mcec":51,"socket.io-client":35}],59:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14353,7 +14355,7 @@ exports.default = terrain;
 
 module.exports = terrain;
 
-},{"../src/terrain_tile":59}],59:[function(require,module,exports){
+},{"../src/terrain_tile":60}],60:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15420,7 +15422,7 @@ exports.default = terrain_tile;
 
 module.exports = terrain_tile;
 
-},{}],60:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15535,7 +15537,7 @@ exports.default = views;
 
 module.exports = new views();
 
-},{"../src/mcec":50,"../src/sockets":57}],61:[function(require,module,exports){
+},{"../src/mcec":51,"../src/sockets":58}],62:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15645,7 +15647,7 @@ var webview = function (_baseModel) {
 
 module.exports = webview;
 
-},{"../js/renderers/CSS3DRenderer.js":3,"../src/basemodel":46}],62:[function(require,module,exports){
+},{"../js/renderers/CSS3DRenderer.js":3,"../src/basemodel":47}],63:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -16542,6 +16544,6 @@ var world = function (_baseModel) {
 
 module.exports = world;
 
-},{"../src/basemodel":46,"../src/shaders":56,"../src/sockets":57,"../src/terrain":58,"../src/webview":61}]},{},[45])
+},{"../src/basemodel":47,"../src/shaders":57,"../src/sockets":58,"../src/terrain":59,"../src/webview":62}]},{},[46])
 
 //# sourceMappingURL=compiled.js.map
